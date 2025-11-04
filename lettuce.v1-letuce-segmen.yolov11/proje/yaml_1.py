@@ -1,8 +1,9 @@
 import yaml
+import torch
 from ultralytics import YOLO
 
 # 1. data.yaml 경로
-yaml_path = '/home/aa/lettuce.v1-letuce-segmen.yolov11/data.yaml'
+yaml_path = '/home/aa/yoloTest/lettuce.v1-letuce-segmen.yolov11/data.yaml'
 
 # 2. data.yaml 생성
 data = {
@@ -20,6 +21,9 @@ with open(yaml_path, 'w') as f:
 with open(yaml_path, 'r') as f:
     print(yaml.safe_load(f))
 
+
+torch.cuda.empty_cache()
+
 # 3. 모델 로드
 model = YOLO('yolo11n.pt')
 
@@ -32,8 +36,10 @@ print(model.names)
 model.train(
     data=yaml_path,
     epochs=30,
-    patience=5,
-    imgsz=416,
+    batch=4,
+    patience=10,
+    imgsz=320,
+    half=True,
     project='/home/aa/yoloTest/lettuce.v1-letuce-segmen.yolov11',  # ⬅️ 결과 저장 위치
     name='train_result'                                     # 폴더명: train_result
 )
