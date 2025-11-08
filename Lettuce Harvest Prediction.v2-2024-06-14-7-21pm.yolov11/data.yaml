@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['Lettuce-Not-Ready-to-Harvest', 'Lettuce-Ready-to-Harvest']
+
+roboflow:
+  workspace: samandini-jayasinghe
+  project: lettuce-harvest-prediction
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/samandini-jayasinghe/lettuce-harvest-prediction/dataset/2
