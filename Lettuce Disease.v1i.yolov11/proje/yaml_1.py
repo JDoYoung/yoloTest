@@ -37,7 +37,12 @@ model.train(
     data=yaml_path,
     epochs=30,
     patience=10,
-    imgsz=416,
+    imgsz=512,
+    weight_decay=0.0005,
+    batch=8,
+    mosaic=0.5,
+    lr0=0.002,
+    lrf=0.01,
     project='/home/planti/yoloTest/Lettuce Disease.v1i.yolov11',  # ⬅️ 결과 저장 위치
     name='train_result'                                     # 폴더명: train_result
 )
