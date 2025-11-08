@@ -1,13 +1,12 @@
-train: ../train/images
-val: ../valid/images
-test: ../test/images
-
+names:
+- Bacterial
+- Downy_mildew_on_lettuce
+- Powdery_mildew_on_lettuce
+- Septoria_Blight_on_lettuce
+- Viral
+- Wilt_and_leaf_blight_on_lettuce
+- healthy
 nc: 7
-names: ['Bacterial', 'Downy_mildew_on_lettuce', 'Powdery_mildew_on_lettuce', 'Septoria_Blight_on_lettuce', 'Viral', 'Wilt_and_leaf_blight_on_lettuce', 'healthy']
-
-roboflow:
-  workspace: cv-tomato-disease
-  project: lettuce-disease-auek1
-  version: 1
-  license: CC BY 4.0
-  url: https://universe.roboflow.com/cv-tomato-disease/lettuce-disease-auek1/dataset/1
+test: /home/planti/yoloTest/Lettuce Disease.v1i.yolov11/test/images
+train: /home/planti/yoloTest/Lettuce Disease.v1i.yolov11/train/images
+val: /home/planti/yoloTest/Lettuce Disease.v1i.yolov11/valid/images
