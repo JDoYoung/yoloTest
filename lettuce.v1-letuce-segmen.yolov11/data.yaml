@@ -3,6 +3,6 @@ names:
 - MATURE
 - BAD
 nc: 3
-test: /home/planti/yoloTest/lettuce.v1-letuce-segmen.yolov11/test/images
-train: /home/planti/yoloTest/lettuce.v1-letuce-segmen.yolov11/train/images
-val: /home/planti/yoloTest/lettuce.v1-letuce-segmen.yolov11/valid/images
+test: /home/aa/yoloTest/lettuce.v1-letuce-segmen.yolov11/test/images
+train: /home/aa/yoloTest/lettuce.v1-letuce-segmen.yolov11/train/images
+val: /home/aa/yoloTest/lettuce.v1-letuce-segmen.yolov11/valid/images
