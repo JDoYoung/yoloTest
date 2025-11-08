@@ -3,14 +3,14 @@ import torch
 from ultralytics import YOLO
 
 # 1. data.yaml 경로
-yaml_path = '/home/aa/yoloTest/lettuce.v1-letuce-segmen.yolov11/data.yaml'
+yaml_path = '/home/planti/yoloTest/lettuce.v1-letuce-segmen.yolov11/data.yaml'
 
 # 2. data.yaml 생성
 data = {
-    'train': '/home/aa/yoloTest/lettuce.v1-letuce-segmen.yolov11/train/images',
-    'val': '/home/aa/yoloTest/lettuce.v1-letuce-segmen.yolov11/valid/images',
-    'test': '/home/aa/yoloTest/lettuce.v1-letuce-segmen.yolov11/test/images',
-    'names': ['Baby', 'Mature', 'Bad'],
+    'train': '/home/planti/yoloTest/lettuce.v1-letuce-segmen.yolov11/train/images',
+    'val': '/home/planti/yoloTest/lettuce.v1-letuce-segmen.yolov11/valid/images',
+    'test': '/home/planti/yoloTest/lettuce.v1-letuce-segmen.yolov11/test/images',
+    'names': ['GERMINATION','MATURE','BAD'],
     'nc': 3
 }
 
@@ -35,12 +35,15 @@ print(model.names)
 # 5. 학습 시작
 model.train(
     data=yaml_path,
-    epochs=30,
-    batch=4,
+    epochs=50,
     patience=10,
-    imgsz=320,
-    half=True,
-    project='/home/aa/yoloTest/lettuce.v1-letuce-segmen.yolov11',  # ⬅️ 결과 저장 위치
+    imgsz=512,
+    weight_decay=0.0005,
+    batch=8,
+    mosaic=0.5,
+    lr0=0.002,
+    lrf=0.01,
+    project='/home/planti/yoloTest/lettuce.v1-letuce-segmen.yolov11',  # ⬅️ 결과 저장 위치
     name='train_result'                                     # 폴더명: train_result
 )
 

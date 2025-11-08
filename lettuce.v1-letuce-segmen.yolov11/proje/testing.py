@@ -30,7 +30,7 @@ for image_name in image_files:
     total_images_processed += 1
     
     # 모든 클래스에 대해 검출 수행 (결과 이미지 저장)
-    results = model(image_path, conf=0.15, verbose=False, save=True, project=output_folder, name='results', exist_ok=True)
+    results = model(image_path, conf=0.125, verbose=False, save=True, project=output_folder, name='results', exist_ok=True)
     
     # 검출된 객체들의 클래스 카운트
     if results and len(results[0].boxes) > 0:
